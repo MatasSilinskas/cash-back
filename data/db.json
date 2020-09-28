@@ -1,0 +1,49 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "payer": {
+        "id": 1,
+        "firstName": "Joe",
+        "lastName": "Durham"
+      },
+      "payee": {
+        "id": 2,
+        "firstName": "Laila",
+        "lastName": "Strickland"
+      },
+      "date": "2010-10-10",
+      "debtAmount": "1510"
+    },
+    {
+      "id": 2,
+      "payer": {
+        "id": 1,
+        "firstName": "Joe",
+        "lastName": "Durham"
+      },
+      "payee": {
+        "id": 3,
+        "firstName": "Linzi",
+        "lastName": "Small"
+      },
+      "date": "2010-10-11",
+      "debtAmount": "1029"
+    },
+    {
+      "id": 3,
+      "payer": {
+        "id": 3,
+        "firstName": "Linzi",
+        "lastName": "Small"
+      },
+      "payee": {
+        "id": 1,
+        "firstName": "Joe",
+        "lastName": "Durham"
+      },
+      "date": "2010-10-10",
+      "debtAmount": "521"
+    }
+  ]
+}
