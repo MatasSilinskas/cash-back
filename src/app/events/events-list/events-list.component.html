@@ -1,7 +1,5 @@
 <mat-list>
   <mat-list-item *ngFor="let event of events">
-    <mat-card>
-      <mat-card-header>{{event.date}}</mat-card-header>
-    </mat-card>
+    <app-events-list-item [event]="event"></app-events-list-item>
   </mat-list-item>
 </mat-list>
