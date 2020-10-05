@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {IEvent} from '../event.interface';
 import {CurrentUserService} from '../../shared-services/current-user.service';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-events-list-item',
@@ -17,7 +18,9 @@ export class EventsListItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentUserService.getCurrentUser().subscribe(user => this.currentUserId = user.id);
+    this.currentUserService.getCurrentUser()
+      .pipe(take(1))
+      .subscribe(user => this.currentUserId = user.id);
   }
 
   public isCurrentUserPayer(): boolean {
