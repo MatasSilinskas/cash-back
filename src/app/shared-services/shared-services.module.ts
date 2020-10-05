@@ -4,6 +4,9 @@ import { FullNamePipe } from './pipes/full-name.pipe';
 
 @NgModule({
   declarations: [FullNamePipe],
+  exports: [
+    FullNamePipe
+  ],
   imports: [
     CommonModule
   ]
