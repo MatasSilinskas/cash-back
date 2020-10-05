@@ -3,6 +3,8 @@ import {EventService} from '../event.service';
 import {IEvent} from '../event.interface';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {MatDialog} from '@angular/material/dialog';
+import {NewEventModalComponent} from '../new-event-modal/new-event-modal.component';
 
 @Component({
   selector: 'app-events-list',
@@ -14,13 +16,17 @@ export class EventsListComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject();
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
     this.eventService.getEvents()
       .pipe(takeUntil(this.destroy$))
       .subscribe(events => this.events = events);
+  }
+
+  openNewEventModal(): void {
+    const dialogRef = this.dialog.open(NewEventModalComponent);
   }
 
   ngOnDestroy(): void {
