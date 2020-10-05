@@ -45,5 +45,19 @@
       "date": "2010-10-10",
       "debtAmount": "521"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": 2,
+      "firstName": "Laila",
+      "lastName": "Strickland"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "firstName": "Linzi",
+      "lastName": "Small"
+    }
   ]
 }
