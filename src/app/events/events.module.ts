@@ -4,6 +4,7 @@ import { EventsListComponent } from './events-list/events-list.component';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { EventsListItemComponent } from './events-list-item/events-list-item.component';
+import {FriendsModule} from '../friends/friends.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { EventsListItemComponent } from './events-list-item/events-list-item.com
   imports: [
     CommonModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    FriendsModule
   ]
 })
 export class EventsModule { }
