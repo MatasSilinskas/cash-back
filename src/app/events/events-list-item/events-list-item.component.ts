@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {EventInterface} from '../event.interface';
+import {IEvent} from '../event.interface';
 import {CurrentUserService} from '../../shared-services/current-user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {CurrentUserService} from '../../shared-services/current-user.service';
 })
 export class EventsListItemComponent implements OnInit {
   @Input()
-  public event: EventInterface;
+  public event: IEvent;
 
   private currentUserId: number;
 

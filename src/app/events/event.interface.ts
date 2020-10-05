@@ -1,13 +1,9 @@
-export interface EventInterface {
+import {IUser} from '../shared-services/user.interface';
+
+export interface IEvent {
   id: number;
-  payer: UserInterface;
-  payee: UserInterface;
+  payer: IUser;
+  payee: IUser;
   date: string;
   debtAmount: string;
-}
-
-export interface UserInterface {
-  id: number;
-  firstName: string;
-  lastName: string;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from '../event.service';
-import {EventInterface} from '../event.interface';
+import {IEvent} from '../event.interface';
 
 @Component({
   selector: 'app-events-list',
@@ -8,7 +8,7 @@ import {EventInterface} from '../event.interface';
   styleUrls: ['./events-list.component.scss']
 })
 export class EventsListComponent implements OnInit {
-  public events: EventInterface[];
+  public events: IEvent[];
 
   constructor(private eventService: EventService) { }
 
