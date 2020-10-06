@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
 import {FriendsService} from '../friends.service';
 import {Subject} from 'rxjs';
 import {IFriend} from '../friend.interface';
@@ -12,6 +12,9 @@ import {takeUntil} from 'rxjs/operators';
 export class FriendDropdownComponent implements OnInit, OnDestroy {
   public friends: IFriend[];
 
+  @Output()
+  public selectedFriend = new EventEmitter<IFriend>();
+
   private destroy$ = new Subject();
 
   constructor(private friendService: FriendsService) {
@@ -23,6 +26,10 @@ export class FriendDropdownComponent implements OnInit, OnDestroy {
       .subscribe(friends => {
         this.friends = friends;
       });
+  }
+
+  public selectFriend(friend: IFriend): void {
+    this.selectedFriend.emit(friend);
   }
 
   ngOnDestroy(): void {
