@@ -13,7 +13,8 @@
         "lastName": "Strickland"
       },
       "date": "2010-10-10",
-      "debtAmount": "1510"
+      "debtAmount": "1510",
+      "comment": "Party"
     },
     {
       "id": 2,
@@ -28,7 +29,8 @@
         "lastName": "Small"
       },
       "date": "2010-10-11",
-      "debtAmount": "1029"
+      "debtAmount": "1029",
+      "comment": "Dinner"
     },
     {
       "id": 3,
@@ -43,7 +45,8 @@
         "lastName": "Durham"
       },
       "date": "2010-10-10",
-      "debtAmount": "521"
+      "debtAmount": "521",
+      "comment": null
     }
   ],
   "friends": [

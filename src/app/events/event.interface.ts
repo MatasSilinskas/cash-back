@@ -6,4 +6,5 @@ export interface IEvent {
   payee: IUser;
   date: string;
   debtAmount: string;
+  comment?: string;
 }

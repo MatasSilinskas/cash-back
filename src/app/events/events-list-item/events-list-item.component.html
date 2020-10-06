@@ -1,10 +1,11 @@
 <mat-card>
   <mat-card-header>{{event.date}}</mat-card-header>
   <mat-card-title>{{event.debtAmount}}€</mat-card-title>
-  <mat-card-content>{{
+  <mat-card-subtitle>{{
     isCurrentUserPayer() ?
       event.payee.firstName + ' owes you money':
       'You owe ' + event.payee.firstName + ' money'
     }}
-  </mat-card-content>
+  </mat-card-subtitle>
+  <mat-card-content *ngIf="event.comment !== null">Comment: {{event.comment}}</mat-card-content>
 </mat-card>
