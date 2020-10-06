@@ -1,3 +1,7 @@
-<p>Create new event</p>
+<h2 mat-dialog-title>Create new event</h2>
 
-<app-friend-dropdown></app-friend-dropdown>
+<form [formGroup]="eventForm" (ngSubmit)="saveEvent()">
+  <mat-slide-toggle color="primary" formControlName="currentUserPaid">I paid</mat-slide-toggle>
+  <app-friend-dropdown formControlName="friend" (selectedFriend)="addFriend($event)"></app-friend-dropdown>
+  <button color="primary" mat-button type="submit">Save</button>
+</form>

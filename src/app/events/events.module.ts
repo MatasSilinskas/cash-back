@@ -9,6 +9,8 @@ import {NewEventModalComponent} from './new-event-modal/new-event-modal.componen
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     FriendsModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
   ]
 })
 export class EventsModule {

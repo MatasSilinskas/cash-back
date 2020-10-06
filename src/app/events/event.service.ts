@@ -15,4 +15,8 @@ export class EventService {
   public getEvents(): Observable<IEvent[]> {
     return this.httpClient.get<IEvent[]>(this.config.apiUrl + '/events');
   }
+
+  public addEvent(event: IEvent): void {
+    this.httpClient.post(this.config.apiUrl + '/events', event);
+  }
 }
