@@ -1,7 +1,29 @@
 <h2 mat-dialog-title>Create new event</h2>
 
-<form [formGroup]="eventForm" (ngSubmit)="saveEvent()">
-  <mat-slide-toggle color="primary" formControlName="currentUserPaid">I paid</mat-slide-toggle>
-  <app-friend-dropdown formControlName="friend" (selectedFriend)="addFriend($event)"></app-friend-dropdown>
-  <button color="primary" mat-button type="submit">Save</button>
+<form [formGroup]="eventForm" (ngSubmit)="saveEvent()" class="form">
+  <mat-slide-toggle class="form-field" color="primary" formControlName="currentUserPaid">I paid</mat-slide-toggle>
+
+  <app-friend-dropdown [placeholder]="friendDropdownPlaceholder" formControlName="friend" class="form-field"
+                       (selectedFriend)="addFriend($event)"></app-friend-dropdown>
+
+  <mat-form-field class="form-field">
+    <mat-label>Amount</mat-label>
+    <input matInput placeholder="12.9" formControlName="debt">
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Comment</mat-label>
+    <input matInput placeholder="Lunch" formControlName="comment">
+  </mat-form-field>
+
+  <button class="submit-button" color="primary" mat-stroked-button type="submit">Save</button>
 </form>

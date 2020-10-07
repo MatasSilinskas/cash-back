@@ -9,15 +9,24 @@ import {IFriend} from '../../friends/friend.interface';
   styleUrls: ['./new-event-modal.component.scss']
 })
 export class NewEventModalComponent implements OnInit {
+  public friendDropdownPlaceholder = 'Select friend who paid';
+
   public eventForm = this.formBuilder.group({
     currentUserPaid: [true],
     friend: [],
+    comment: [],
+    date: [],
   });
 
   constructor(private formBuilder: FormBuilder, private eventService: EventService) {
   }
 
   ngOnInit(): void {
+    this.eventForm.get('currentUserPaid').valueChanges.subscribe(
+      value => this.friendDropdownPlaceholder = value
+        ? 'Select a friend who paid'
+        : 'Select a friend who paid for you'
+    );
   }
 
   public saveEvent(): void {
@@ -27,4 +36,8 @@ export class NewEventModalComponent implements OnInit {
   public addFriend(friend: IFriend): void {
     this.eventForm.patchValue({friend});
   }
+
+  public changePlaceholder(): void {
+  }
+
 }
