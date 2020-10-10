@@ -1,7 +1,10 @@
 import {IUser} from '../shared-services/user.interface';
 
-export interface IEvent {
+export interface IEvent extends IBaseEvent {
   id: number;
+}
+
+export interface IBaseEvent {
   payer: IUser;
   payee: IUser;
   date: string;

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Config} from '../config';
 import {Observable} from 'rxjs';
-import {IEvent} from './event.interface';
+import {IBaseEvent, IEvent} from './event.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class EventService {
     return this.httpClient.get<IEvent[]>(this.config.apiUrl + '/events');
   }
 
-  public addEvent(event: IEvent): void {
-    this.httpClient.post(this.config.apiUrl + '/events', event);
+  public addEvent(event: IBaseEvent): Observable<IBaseEvent> {
+    return this.httpClient.post<IBaseEvent>(this.config.apiUrl + '/events', event);
   }
 }
