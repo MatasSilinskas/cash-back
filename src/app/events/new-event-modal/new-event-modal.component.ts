@@ -6,7 +6,7 @@ import {IFriend} from '../../friends/friend.interface';
 @Component({
   selector: 'app-new-event-modal',
   templateUrl: './new-event-modal.component.html',
-  styleUrls: ['./new-event-modal.component.scss']
+  styleUrls: ['./new-event-modal.component.scss', '../../shared-styles.scss']
 })
 export class NewEventModalComponent implements OnInit {
   public friendDropdownPlaceholder = 'Select friend who paid';

@@ -1,10 +1,17 @@
-<mat-list>
-  <mat-list-item *ngFor="let event of events">
-    <app-events-list-item [event]="event"></app-events-list-item>
-  </mat-list-item>
-</mat-list>
+<div>
+  <mat-list>
+    <mat-list-item *ngFor="let event of events"
+                   [ngClass]="event.payer.id === currentUser.id ? 'flex-right' : 'flex-left'">
+      <app-events-list-item [event]="event"></app-events-list-item>
+    </mat-list-item>
+  </mat-list>
+</div>
 
-<button color="primary" mat-button (click)="openNewEventModal()">
-  <mat-icon>add</mat-icon>
-  Create new
-</button>
+<mat-divider></mat-divider>
+
+<div class="flex-center">
+  <button color="primary" mat-button (click)="openNewEventModal()">
+    <mat-icon>add</mat-icon>
+    Create new
+  </button>
+</div>
