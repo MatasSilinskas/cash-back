@@ -5,7 +5,11 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {EventsModule} from './events/events.module';
 import {HttpClientModule} from '@angular/common/http';
-import { HeaderComponent } from './header/header.component';
+import {HeaderComponent} from './header/header.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {SharedServicesModule} from './shared-services/shared-services.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     AppRoutingModule,
     EventsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    SharedServicesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
