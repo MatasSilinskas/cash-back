@@ -10,7 +10,7 @@ export class ValuePipe implements PipeTransform {
       value = '0' + value;
     }
 
-    return value.slice(0, value.length - 2) + ',' + value.slice(value.length - 2);
+    return value.slice(0, value.length - 2) + '.' + value.slice(value.length - 2);
   }
 
 }

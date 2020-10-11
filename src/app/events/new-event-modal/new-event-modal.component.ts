@@ -52,7 +52,7 @@ export class NewEventModalComponent implements OnInit {
     const postEvent: IBaseEvent = {
       payee: !currentUserPaid ? this.currentUser : friend,
       payer: currentUserPaid ? this.currentUser : friend,
-      debtAmount: this.eventForm.value.debt,
+      debtAmount: this.getAmountValue(this.eventForm.value.debt),
       date: this.eventForm.value.date,
       comment: this.eventForm.value.comment,
     };
@@ -62,5 +62,16 @@ export class NewEventModalComponent implements OnInit {
 
   public addFriend(friend: IFriend): void {
     this.eventForm.patchValue({friend});
+  }
+
+  private getAmountValue(value: string): string {
+    const splittedValue = value.split('.');
+    let cents = splittedValue[1] ?? '00';
+
+    while (cents.length < 2) {
+      cents += '0';
+    }
+
+    return splittedValue[0] + cents;
   }
 }
