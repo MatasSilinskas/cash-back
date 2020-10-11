@@ -26,6 +26,7 @@
   </mat-form-field>
 
   <div class="flex-right">
-    <button class="submit-button" color="primary" mat-stroked-button type="submit">Save</button>
+    <button class="submit-button" color="primary" mat-stroked-button type="submit" [disabled]="eventForm.invalid">Save
+    </button>
   </div>
 </form>

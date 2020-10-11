@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {EventService} from '../event.service';
 import {IFriend} from '../../friends/friend.interface';
 import {IBaseEvent} from '../event.interface';
@@ -17,10 +17,10 @@ export class NewEventModalComponent implements OnInit {
 
   public eventForm = this.formBuilder.group({
     currentUserPaid: [true],
-    friend: [],
+    friend: ['', Validators.required],
     comment: [],
-    date: [],
-    debt: [],
+    date: ['', Validators.required],
+    debt: ['', [Validators.required, Validators.pattern(/^\d+([.]\d{1,2})?$/)]],
   });
 
   private currentUser: IUser;
