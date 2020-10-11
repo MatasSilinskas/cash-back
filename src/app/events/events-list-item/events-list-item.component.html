@@ -1,6 +1,6 @@
 <mat-card>
-  <mat-card-header>{{event.date}}</mat-card-header>
-  <mat-card-title>{{event.debtAmount}}€</mat-card-title>
+  <mat-card-header>{{event.date | date: 'y-MM-dd'}}</mat-card-header>
+  <mat-card-title>{{event.debtAmount | value}} €</mat-card-title>
   <mat-card-subtitle>{{
     isCurrentUserPayer() ?
       event.payee.firstName + ' owes you money':

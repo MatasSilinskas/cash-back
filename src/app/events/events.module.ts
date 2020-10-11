@@ -15,10 +15,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { ValuePipe } from './events-list-item/value.pipe';
 
 
 @NgModule({
-  declarations: [EventsListComponent, EventsListItemComponent, NewEventModalComponent],
+  declarations: [EventsListComponent, EventsListItemComponent, NewEventModalComponent, ValuePipe],
   exports: [
     EventsListComponent,
   ],
