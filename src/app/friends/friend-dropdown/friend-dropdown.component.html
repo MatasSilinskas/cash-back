@@ -1,5 +1,4 @@
-<mat-select placeholder="{{placeholder}}">
-  <mat-option (click)="selectFriend(friend)"
-              *ngFor="let friend of friends"
-              [value]=friend.id>{{friend | fullName}}</mat-option>
+<mat-select [ngModel]="selectedFriend" placeholder="{{placeholder}}" (ngModelChange)="onChange($event)">
+  <mat-option *ngFor="let friend of friends"
+              [value]=friend>{{friend | fullName}}</mat-option>
 </mat-select>

@@ -3,8 +3,8 @@
 <form [formGroup]="eventForm" (ngSubmit)="saveEvent()" class="form">
   <mat-slide-toggle class="form-field" color="primary" formControlName="currentUserPaid">I paid</mat-slide-toggle>
 
-  <app-friend-dropdown [placeholder]="friendDropdownPlaceholder" formControlName="friend" class="form-field"
-                       (selectedFriend)="addFriend($event)"></app-friend-dropdown>
+  <app-friend-dropdown [placeholder]="friendDropdownPlaceholder" formControlName="friend"
+                       class="form-field"></app-friend-dropdown>
 
   <mat-form-field class="form-field">
     <mat-label>Amount</mat-label>

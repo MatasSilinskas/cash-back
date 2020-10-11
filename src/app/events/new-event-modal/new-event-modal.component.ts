@@ -60,10 +60,6 @@ export class NewEventModalComponent implements OnInit {
     this.eventService.addEvent(postEvent).subscribe(value => console.log(value));
   }
 
-  public addFriend(friend: IFriend): void {
-    this.eventForm.patchValue({friend});
-  }
-
   private getAmountValue(value: string): string {
     const splittedValue = value.split('.');
     let cents = splittedValue[1] ?? '00';

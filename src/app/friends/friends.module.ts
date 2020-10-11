@@ -4,6 +4,7 @@ import {FriendDropdownComponent} from './friend-dropdown/friend-dropdown.compone
 import {MatSelectModule} from '@angular/material/select';
 import {SharedServicesModule} from '../shared-services/shared-services.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [FriendDropdownComponent],
@@ -14,7 +15,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CommonModule,
     MatSelectModule,
     SharedServicesModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ]
 })
 export class FriendsModule {
